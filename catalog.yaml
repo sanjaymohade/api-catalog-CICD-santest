@@ -1,0 +1,6 @@
+#%Catalog Descriptor 1.0
+projects:
+  - main: santest-author-api.raml
+    assetId: santest-author-api
+    version: 1.0.0
+    apiVersion: v1
