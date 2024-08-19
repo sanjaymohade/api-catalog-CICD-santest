@@ -1,0 +1,28 @@
+# Santest
+
+name: Publish to exchange using catalog CLi
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+    - uses: actions/checkout@v4
+    
+    - name: Install Catalog CLI
+      run: |
+        sudo apt-get update
+        npm install -g api-catalog-cli@latest
+
+    - name: Publish to exchange
+      run: |
+        api-catalog publish-asset --organization="8f0c48f1-3c97-41b6-824c-983672f7f3c3" --username="sanjaym14" --password="Mulesoft@1980" 
+        
